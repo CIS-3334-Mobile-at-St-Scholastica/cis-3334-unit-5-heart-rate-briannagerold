@@ -3,15 +3,62 @@
 android:orientation="horizontal" android:layout_width="match_parent"
 android:layout_height="match_parent">
 
-<TextView
-    android:text="Pulse: "
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/textView" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-<TextView
-    android:text="99.9"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/textViewPulse" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:text="Pulse: "
+                android:textSize="18sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textViewPulse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="99.9"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/lblRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="cursive"
+                android:text="Range:" />
+
+            <TextView
+                android:id="@+id/txtRange"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Endurance" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
+    </LinearLayout>
+
 </LinearLayout>
