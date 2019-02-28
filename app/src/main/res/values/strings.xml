@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Heart Rate Tracker</string>
+    <string name="title_activity_detailes">Detailes</string>
 </resources>

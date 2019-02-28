@@ -1,5 +1,6 @@
 package css.cis3334.heartratetracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,7 +35,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HeartRate hr = (HeartRate) parent.getItemAtPosition(position);
-                txtSelect.setText("You've selected: " + hr.toString());
+                Intent detailActIntent = new Intent(parent.getContext(), DetailsActivity.class);
+                detailActIntent.putExtra("hr", hr);
+                startActivity(detailActIntent);
             }
         });
     }
