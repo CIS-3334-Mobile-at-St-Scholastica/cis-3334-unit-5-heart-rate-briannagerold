@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class HeartRateAdapter extends ArrayAdapter<HeartRate> {
 
     private final Context context;      // The activity calling this adapter
@@ -52,6 +55,17 @@ public class HeartRateAdapter extends ArrayAdapter<HeartRate> {
         TextView txtRange = view.findViewById(R.id.txtRange);
         txtRange.setText(hr.getRangeName());
 
+        Map<String, Integer> colorMap = new HashMap<>();
+        colorMap.put("Resting", R.color.Resting);
+        colorMap.put("Moderate", R.color.Moderate);
+        colorMap.put("Endurance", R.color.Endurance);
+        colorMap.put("Aerobic", R.color.Aerobic);
+        colorMap.put("Anaerobic", R.color.Anaerobic);
+        colorMap.put("Red zone", R.color.RedZone);
+
+        txtRange.setTextColor(ContextCompat.getColor(context, colorMap.get(hr.getRangeName())));
+
+        /*
         if(hr.getRangeName().equals("Resting")){
             txtRange.setTextColor(ContextCompat.getColor(context, R.color.Resting));
         }
@@ -70,6 +84,8 @@ public class HeartRateAdapter extends ArrayAdapter<HeartRate> {
         else if(hr.getRangeName().equals("Red zone")){
             txtRange.setTextColor(ContextCompat.getColor(context, R.color.RedZone));
         }
+        */
+
 
         TextView txtDescription = view.findViewById(R.id.txtDescription);
         txtDescription.setText(hr.getRangeDescrtiption());
